@@ -1,0 +1,54 @@
+seml:
+  # Set seml config
+
+slurm:
+  # Set config for slurm
+
+fixed:
+  model_path: ""
+  skip_existing_experiments: True
+
+topk:
+  fixed:
+    model_name: "tofu_grad_ascent_forget01"
+    dataset_name: "forget01"      
+    attack_config:
+      iters: 100
+      step_size: 0
+      num_tokens_printed: 100
+      batch_size: 16
+      verbose: True
+      early_stopping: False
+      attack_type: "no_attack"
+      generate_interval: 1
+      control_prompt: None
+      il_gen: None
+    test_split: 0
+  grid:
+    attack_config:
+      temperature: 
+        type: choice
+        options:
+          - 10.0
+          - 2.0
+          - 1
+          - 0.5
+          - 0.1
+
+no_attack:
+  fixed:
+    model_name: "tofu_grad_ascent_forget01"
+    dataset_name: "forget01"      
+    attack_config:
+      iters: 1
+      step_size: 0
+      num_tokens_printed: 100
+      batch_size: 16
+      verbose: True
+      early_stopping: False
+      attack_type: "no_attack"
+      generate_interval: 1
+      control_prompt: None
+      il_gen: None
+      temperature: 0
+    test_split: 0

@@ -1,0 +1,56 @@
+seml:
+  # Set seml config
+
+slurm:
+  # Set config for slurm
+
+fixed:
+  model_path: ""
+  skip_existing_experiments: True
+
+grid:
+  attack_config:
+    control_prompt: 
+      type: choice
+      options:
+        - "! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !"
+        - "! ! ! ! !"
+        - "!"
+    
+individual:
+  fixed:
+    model_name: "tofu_grad_diff_forget01"
+    dataset_name: "forget01"      
+    attack_config:
+      iters: 100
+      step_size: 0.001
+      num_tokens_printed: 100
+      batch_size: 8
+      verbose: True
+      early_stopping: False
+      attack_type: "individual"
+      generate_interval: 1
+      il_gen: "all"
+    test_split: 0
+
+universal:
+  fixed:
+    model_name: "tofu_grad_diff_forget01"
+    dataset_name: "forget01"    
+    attack_config:
+      iters: 100
+      step_size: 0.001
+      num_tokens_printed: 100
+      batch_size: 8
+      verbose: True
+      early_stopping: False
+      attack_type: "universal"
+      generate_interval: 1
+      il_gen: "all"
+  grid:
+    test_split: 
+      type: choice
+      options:
+        - 0
+        - 0.5 
+        - 0.75

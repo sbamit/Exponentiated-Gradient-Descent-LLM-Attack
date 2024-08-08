@@ -1,0 +1,62 @@
+seml:
+  # Set seml config
+
+slurm:
+  # Set config for slurm
+
+fixed:
+  model_path: ""
+  skip_existing_experiments: True
+
+grid:
+  attack_config:
+    control_prompt: 
+      type: choice
+      options:
+        - "! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !"
+        - "! ! ! ! !"
+        - "!"
+  model_name: 
+    type: choice
+    options:
+      - "Llama-2-7b-chat-hf"
+      - "LlamaGuard-7b"
+      - "Mistral-7B-v0.1"
+      - "vicuna-7b-v1.5"
+
+harmful_behaviors_universal:
+  fixed:
+    dataset_name: "harmful_behaviors"
+    attack_config:
+      iters: 200
+      step_size: 0.001
+      num_tokens_printed: 100
+      batch_size: 16
+      verbose: True
+      early_stopping: False
+      attack_type: "universal"
+      generate_interval: 10
+      il_gen: "all"
+  grid:
+    test_split:
+      type: choice
+      options:
+        - 0
+        - 0.5
+        - 0.75
+
+harmful_behaviors_individual:
+  fixed:
+    dataset_name: "harmful_behaviors"
+    test_split: 0
+    attack_config:
+      iters: 200
+      step_size: 0.001
+      num_tokens_printed: 100
+      batch_size: 16
+      verbose: True
+      early_stopping: False
+      attack_type: "individual"
+      generate_interval: 10
+      il_gen: "all"
+    
