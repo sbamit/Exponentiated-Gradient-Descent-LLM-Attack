@@ -16,8 +16,9 @@ create_figures.ipynb
 data/
 results/
 outputs/
-CSV_Files/
-JSON_Files/
+CSV_Files/*.csv
+JSON_Files/*.json
+TORCH_Files/*.pt
 *.csv
 *.json
 *.png
