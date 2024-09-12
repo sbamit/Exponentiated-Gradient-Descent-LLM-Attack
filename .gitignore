@@ -18,3 +18,4 @@ TORCH_Files/*.pt
 *.json
 *.png
 log.txt
+CSV_Files/Switch_targets/*
