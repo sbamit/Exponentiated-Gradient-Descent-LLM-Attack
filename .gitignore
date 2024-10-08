@@ -16,6 +16,7 @@ CSV_Files/*.csv
 JSON_Files/*.json
 TORCH_Files/*.pt
 *.json
+*.jsonl
 *.png
 log.txt
 CSV_Files/Switch_targets/*
