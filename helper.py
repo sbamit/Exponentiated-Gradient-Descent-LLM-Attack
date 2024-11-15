@@ -123,3 +123,24 @@ def parse_csv(input_file):
         next(csv_reader)  # Skip the header row
         rows = list(csv_reader)
         return rows
+
+############################ Safe-RLHF ############################
+# To Make the following import work
+# Use a Separate Conda Environment
+from safe_rlhf.models import AutoModelForScore
+
+# The Following functions are useful for Evaluation
+def load_helpfulness_evaluator(model_path, device):
+    model = AutoModelForCausalLM.from_pretrained(
+        model_path, torch_dtype=torch.bfloat16
+    ).to(device).eval()
+    
+    tokenizer = AutoTokenizer.from_pretrained(model_path)
+    return model, tokenizer
+
+def load_harmfulness_evaluator(model_path, device):
+    cost_model = AutoModelForScore.from_pretrained(
+        model_path, torch_dtype=torch.bfloat16
+    ).to(device).eval()
+    cost_tokenizer = AutoTokenizer.from_pretrained(model_path)
+    return cost_model, cost_tokenizer
