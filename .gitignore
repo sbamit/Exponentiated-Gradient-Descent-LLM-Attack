@@ -11,13 +11,14 @@ data/red_team_attempts.jsonl
 data/red_team_attempts.jsonl.gz
 plots/
 results/
-outputs/*.pdf
-CSV_Files/*.csv
-JSON_Files/*.json
-TORCH_Files/*.pt
-*.json
-*.jsonl
-*.png
+
 log.txt
 CSV_Files/Switch_targets/*
-CSV_Files/*.pdf
+
+# Ignore all .pdf, .csv, .json, and .jsonl files globally
+*.pdf
+*.csv
+*.json
+*.jsonl
+*.pt
+*.png
