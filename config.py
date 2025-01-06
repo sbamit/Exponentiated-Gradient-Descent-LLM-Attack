@@ -21,11 +21,11 @@ class PGDConfig:
 pgdconfig = PGDConfig()
 
 # MODEL PATHS
-falcon_path = "../DIR/falcon-7b-instruct"
+falcon_path = "/home/samuel/research/llmattacks/llm-attacks/DIR/falcon-7b-instruct"
 llama2_path = "/home/samuel/research/llmattacks/llm-attacks/DIR/llama-2/llama/Llama-2-7b-chat-hf"
-mpt_path = "../DIR/mpt-7b-chat"
-vicuna_path = "../DIR/vicuna-7b-v1.5"
-mistral_path = "../DIR/Mistral-7B-Instruct-v0.3"
+mpt_path = "/home/samuel/research/llmattacks/llm-attacks/DIR/mpt-7b-chat"
+vicuna_path = "/home/samuel/research/llmattacks/llm-attacks/DIR/vicuna-7b-v1.5"
+mistral_path = "/home/samuel/research/llmattacks/llm-attacks/DIR/Mistral-7B-Instruct-v0.3"
 
 # DATASET PATHS
 advbench = "./data/AdvBench/harmful_behaviors.csv"

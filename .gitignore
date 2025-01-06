@@ -7,15 +7,14 @@ run.ipynb
 evaluation/
 test_all
 test_no
-data/red_team_attempts.jsonl
-data/red_team_attempts.jsonl.gz
 plots/
 results/
 
 log.txt
-CSV_Files/Switch_targets/*
-
-# Ignore all .pdf, .csv, .json, and .jsonl files globally
+CSV_Files/*
+JSON_Files/*
+unused_results/*
+# Ignore all .pdf, .json, and .jsonl files globally
 *.pdf
 *.csv
 *.json
