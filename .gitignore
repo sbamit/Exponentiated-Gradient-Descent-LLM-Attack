@@ -11,9 +11,8 @@ plots/
 results/
 
 log.txt
-CSV_Files/*
-JSON_Files/*
 unused_results/*
+unused_scripts/*
 # Ignore all .pdf, .json, and .jsonl files globally
 *.pdf
 *.csv
