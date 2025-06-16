@@ -20,3 +20,4 @@ unused_scripts/*
 *.jsonl
 *.pt
 *.png
+*.txt
