@@ -231,7 +231,8 @@ def multi_prompt_adversarial_suffix_optimization(
                 emb_adv_discrete = (one_hot_discrete @ embed_weights).unsqueeze(0)
 
                 ce_loss, _ = calc_loss(model, emb_user, emb_adv, emb_target, one_hot_target)
-                disc_loss, _ = calc_loss(model, emb_user, emb_adv_discrete, emb_target, one_hot_target)
+                with torch.no_grad():
+                    disc_loss, _ = calc_loss(model, emb_user, emb_adv_discrete, emb_target, one_hot_target)
 
                 regularized_loss = ce_loss - entropy_term + kl_divergence_term
                 total_loss += regularized_loss
@@ -387,7 +388,7 @@ def main():
     args = parser.parse_args()
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    num_tokens: int = 50 
+    num_tokens: int = 300 
     seed: int = 42
     step_size=0.1
 
